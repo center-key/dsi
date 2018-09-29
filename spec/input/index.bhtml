@@ -1,0 +1,29 @@
+<!--#set var="pageTitle" value="Home Page" -->
+<!--#include file="~page-begin.fhtml" -->
+
+<main>
+   <p>
+      Document name:
+      <code><!--#echo var="DOCUMENT_NAME" --></code>
+   </p>
+   <p>
+      Conditional:
+      <!--#if file="$DOCUMENT_NAME=index.bhtml" -->
+      <code>This is the main page.</code>
+      <!--#else -->
+      <code>This is NOT the main page.</code>
+      <!--#endif -->
+   </p>
+   <p>
+      <!--#set var="rate" value="Good!!!" -->
+      Variable value:
+      <code><!--#echo var="rate" --></code>
+   </p>
+   <p>
+      Unicode:
+      <code>ButtonExit=退出</code> | <code>Russian (русский)</code>
+   </p>
+
+</main>
+
+<!--#include file="~page-end.fhtml" -->

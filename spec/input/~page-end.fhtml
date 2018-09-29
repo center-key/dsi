@@ -1,0 +1,6 @@
+<footer>
+   <div><!--#echo var="LAST_MODIFIED" --></div>
+</footer>
+
+</body>
+</html>

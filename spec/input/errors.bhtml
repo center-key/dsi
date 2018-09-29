@@ -1,0 +1,19 @@
+<!--#set var="pageTitle" value="Errors" -->
+<!--#include file="~page-begin.fhtml" -->
+
+<main>
+   <p>
+      Document name:
+      <code><!--#echo var="DOCUMENT_NAME" --></code>
+   </p>
+   <h2>ERROR -- File not found</h2>
+   <p>
+      <!--#include file="bogus.fhtml" -->
+   </p>
+   <h2>ERROR -- Variable not defined</h2>
+   <p>
+      <!--#echo var="not_defined" -->
+   </p>
+</main>
+
+<!--#include file="~page-end.fhtml" -->
