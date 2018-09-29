@@ -15,7 +15,7 @@ public class SystemAttributes {
 
    //Application information
    public static final String appName =    "DSI";
-   public static final String appVersion = "2.1";
+   public static final String appVersion = "2.1.0";
 
    //System information retrieved from JVM
    private static final Properties sysInfo =  System.getProperties();
