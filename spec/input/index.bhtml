@@ -8,16 +8,18 @@
    </p>
    <p>
       Conditional:
-      <!--#if file="$DOCUMENT_NAME=index.bhtml" -->
+      <!--#if expr=="$DOCUMENT_NAME=index.bhtml" -->
       <code>This is the main page.</code>
+      <!--#elif expr=="$DOCUMENT_NAME=errors.bhtml" -->
+      <code>This is the errors page.</code>
       <!--#else -->
       <code>This is NOT the main page.</code>
       <!--#endif -->
    </p>
    <p>
-      <!--#set var="rate" value="Good!!!" -->
       Variable value:
-      <code><!--#echo var="rate" --></code>
+      <!--#set var="exchangeRate" value="Good!!!" -->
+      <code><!--#echo var="exchangeRate" --></code>
    </p>
    <p>
       Unicode:

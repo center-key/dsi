@@ -19,6 +19,7 @@ Command format:
 ```shell
 $ java -jar ~/apps/dsi/dsi.jar [SrcFolder] [FileName] [NewExt]
 ```
+The parameters are optional.
 
 | Parameter   | Description | Default Value |
 | ----------- | ----------- | ------------- |
@@ -36,6 +37,18 @@ Command to generate `.jsp` files from `.bjsp` files in the `public_html` folder:
 ```shell
 $ java -jar ~/apps/dsi/dsi.jar public_html *.bjsp .jsp
 ```
+
+## Page Tags
+Supported page tags:
+* `include`
+* `if`
+* `elif`
+* `else`
+* `endif`
+* `set`
+* `echo`
+
+See the Specification Cases in the **spec** folder for the syntax.
 
 ---
 [MIT License](LICENSE.txt)
