@@ -7,14 +7,14 @@
 # Example (assuming "dsi.jar" in the "~/apps/dsi/" folder):
 #     $ groovyHome=$(dirname $(dirname $(which groovy)))
 #     $ groovyJar=$groovyHome/lib/$(basename $groovyHome).jar
-#     $ java -classpath $groovyJar:~/apps/dsi/dsi.jar com.centerkey.dsi.WebCodeReuser --version
-#     $ java -classpath $groovyJar:~/apps/dsi/dsi.jar com.centerkey.dsi.WebCodeReuser
+#     $ java -classpath $groovyJar:~/apps/dsi/dsi.jar com.centerkey.dsi.Run --version
+#     $ java -classpath $groovyJar:~/apps/dsi/dsi.jar com.centerkey.dsi.Run
 #
 # This shell script ("run.sh") is just for convenience.  It setups up Groovy and runs the dsi.jar
 # file.
 #
 # To make this file runnable:
-#     $ chmod +x *.sh.command
+#     $ chmod +x *.sh
 #
 # Install the Java SE Development Kit (JDK):
 #     https://www.oracle.com/technetwork/java/javase/downloads
@@ -46,5 +46,5 @@ setupGroovy() {
    }
 
 setupGroovy
-java -classpath $groovyJar:$(dirname $BASH_SOURCE)/dsi.jar --illegal-access=deny com.centerkey.dsi.WebCodeReuser $@
+java -classpath $groovyJar:$(dirname $BASH_SOURCE)/dsi.jar --illegal-access=deny com.centerkey.dsi.Run $@
 # --illegal-access=deny, see: https://issues.apache.org/jira/browse/GROOVY-8339

@@ -5,10 +5,11 @@ _Command line tool to convert legacy SSI code into static HTML_
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/center-key/fetch-json/blob/master/LICENSE.txt)
 
 ## Setup
-1. Install [Java](https://www.oracle.com/technetwork/java/javase/downloads)
-1. Install [Groovy](http://groovy-lang.org/download.html) (or just download the distribution into `~/apps/groovy/`)
-1. Execute `mkdir -p ~/apps/dsi`
-1. Download the two files from the [dist](dist) folder into the folder `~/apps/dsi`
+1. Install [Java](https://www.oracle.com/technetwork/java/javase/downloads) and
+1. install [Groovy](http://groovy-lang.org/download.html) (or just download the distribution into the `~/apps/groovy` folder)
+1. Run command `mkdir -p ~/apps/dsi`
+1. Download the two files from the [dist](dist) folder into the `~/apps/dsi` folder
+1. Run command `chmod +x ~/apps/dsi/run.sh`
 
 Verify your setup:
 ```shell

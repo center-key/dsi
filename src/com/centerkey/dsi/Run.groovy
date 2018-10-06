@@ -9,11 +9,11 @@
 
 package com.centerkey.dsi
 
-final class WebCodeReuser {
+final class Run {
    // Usage:
-   //    > java WebCodeReuser <SrcFileName> <DestFileExt> <SrcDir>
+   //    > java Run <SrcFileName> <DestFileExt> <SrcDir>
 
-   private WebCodeReuser() {}
+   private Run() {}
 
    static void main(String[] argv) {
       File[] fileList;
