@@ -11,21 +11,20 @@ package com.centerkey.dsi
 
 class Filter implements FilenameFilter  {
 
-   String filterExpression;
-   boolean wildcard = false;
+   String filterExpression
+   boolean wildcard = false
 
    Filter(String fileName) {
-      this.filterExpression = fileName;
-      wildcard = fileName.length() > 0 && fileName.charAt(0) == '*';
+      this.filterExpression = fileName
+      wildcard = fileName.length() > 0 && fileName.charAt(0) == "*"
       if (wildcard)
-         this.filterExpression = fileName.substring(1);
+         this.filterExpression = fileName.substring(1)
       }
 
    boolean accept(File dir, String name) {
-      File f = new File(name);
-      String fileName = f.getName();
-      return fileName.equals(filterExpression) ||
-         (wildcard && fileName.endsWith(filterExpression));
+      File f = new File(name)
+      String fileName = f.getName()
+      return fileName.equals(filterExpression) || (wildcard && fileName.endsWith(filterExpression))
       }
 
    }
