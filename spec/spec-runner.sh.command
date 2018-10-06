@@ -11,7 +11,7 @@ displayIntro() {
    echo $banner
    echo $(echo $banner | sed s/./=/g)
    pwd
-   java -jar $projectHome/dist/dsi.jar --version
+   source $projectHome/dist/run.sh --version
    echo
    }
 
@@ -20,7 +20,7 @@ specRunner() {
    echo "Running..."
    pwd
    ls -o
-   java -jar $projectHome/dist/dsi.jar
+   source $projectHome/dist/run.sh
    rm ../output/*
    mv *.html ../output
    echo
