@@ -7,12 +7,9 @@
 // MIT License - Copyright (c) individual contributors to DSI                 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.centerkey.dsi;
+package com.centerkey.dsi
 
-import java.io.File;
-import java.io.FilenameFilter;
-
-public class Filter implements FilenameFilter  {
+class Filter implements FilenameFilter  {
 
    String filterExpression;
    boolean wildcard = false;
@@ -24,7 +21,7 @@ public class Filter implements FilenameFilter  {
          this.filterExpression = fileName.substring(1);
       }
 
-   public boolean accept(File dir, String name) {
+   boolean accept(File dir, String name) {
       File f = new File(name);
       String fileName = f.getName();
       return fileName.equals(filterExpression) ||

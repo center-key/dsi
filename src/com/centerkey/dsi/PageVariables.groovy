@@ -8,19 +8,17 @@
 // MIT License - Copyright (c) individual contributors to DSI                 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.centerkey.dsi;
+package com.centerkey.dsi
 
-import java.util.HashMap;
-
-public class PageVariables {
+class PageVariables {
 
    static HashMap<String, String> values = new HashMap<String, String>();
 
-   public void clearAll() {
+   void clearAll() {
       values.clear();
       }
 
-   public String getValue(String varName) {
+   String getValue(String varName) {
       String varValue = values.get(varName);
       if (varValue == null) {
          varValue = ">>> ERROR #4 -- Variable '" + varName + "' not defined.";
@@ -29,7 +27,7 @@ public class PageVariables {
       return varValue;
       }
 
-   public void setValue(String varName, String varValue) {
+   void setValue(String varName, String varValue) {
       values.put(varName, varValue);
       }
 

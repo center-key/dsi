@@ -8,25 +8,17 @@
 // MIT License - Copyright (c) individual contributors to DSI                 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.centerkey.dsi;
+package com.centerkey.dsi
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
-import java.text.DateFormat;
-import java.util.Calendar;
+import java.text.DateFormat
 
-public class InputFile {
+class InputFile {
 
    PageVariables attributes = new PageVariables();
    boolean withinIfBlock = false;
    boolean doIf, trueIfFound;
 
-   public void processFile(File srcFile, File destFile) {
+   void processFile(File srcFile, File destFile) {
       FileOutputStream fileOut;
       try {
          attributes.clearAll();
@@ -50,7 +42,7 @@ public class InputFile {
          }
       }
 
-   public void processFile(File srcFile, PrintStream dataOut) {
+   void processFile(File srcFile, PrintStream dataOut) {
       FileInputStream fileIn;
       BufferedReader  dataIn;
       String          textLine;

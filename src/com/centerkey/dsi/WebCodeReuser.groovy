@@ -7,17 +7,15 @@
 // MIT License - Copyright (c) individual contributors to DSI                 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package com.centerkey.dsi;
+package com.centerkey.dsi
 
-import java.io.File;
-
-public final class WebCodeReuser {
+final class WebCodeReuser {
    // Usage:
    //    > java WebCodeReuser <SrcFileName> <DestFileExt> <SrcDir>
 
    private WebCodeReuser() {}
 
-   public static void main(String[] argv) {
+   static void main(String[] argv) {
       File[] fileList;
       String srcDirName, srcFileName , destDirName, destFileExt;
       System.out.println(SystemAttributes.headerMsg);
