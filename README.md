@@ -6,18 +6,19 @@ _Command line tool to convert legacy SSI code into static HTML_
 
 ## Setup
 1. Install [Java](https://www.oracle.com/technetwork/java/javase/downloads)
+1. Install [Groovy](http://groovy-lang.org/download.html) (or just download the distribution into `~/apps/groovy/`)
 1. Execute `mkdir -p ~/apps/dsi`
-1. Download the [dist/dsi.jar](dist/dsi.jar) executable JAR file into the folder `~/apps/dsi`
+1. Download the two files from the [dist](dist) folder into the folder `~/apps/dsi`
 
 Verify your setup:
 ```shell
-$ java -jar ~/apps/dsi/dsi.jar --version
+$ source ~/apps/dsi/run.sh --version
 ```
 
 ## Usage
 Command format:
 ```shell
-$ java -jar ~/apps/dsi/dsi.jar [SrcFolder] [FileName] [NewExt]
+$ source ~/apps/dsi/run.sh [SrcFolder] [FileName] [NewExt]
 ```
 The parameters are optional.
 
@@ -30,12 +31,12 @@ The parameters are optional.
 ## Examples
 Default command:
 ```shell
-$ java -jar ~/apps/dsi/dsi.jar  #convert .bhtml files to .html
-$ mv *.html ../webroot          #move .html files to web root
+$ source ~/apps/dsi/run.sh  #convert .bhtml files to .html
+$ mv *.html ../webroot      #move .html files to web root
 ```
 Command to generate `.jsp` files from `.bjsp` files in the `public_html` folder:
 ```shell
-$ java -jar ~/apps/dsi/dsi.jar public_html *.bjsp .jsp
+$ source ~/apps/dsi/run.sh public_html *.bjsp .jsp
 ```
 
 ## Page Tags
