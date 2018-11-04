@@ -4,28 +4,9 @@
 #
 # To make this file runnable:
 #     $ chmod +x *.sh.command
-#
-# Install the Java SE Development Kit (JDK):
-#     https://www.oracle.com/technetwork/java/javase/downloads
-#
-# Install Groovy or download binary:
-#     http://groovy-lang.org/download.html --> ~/apps/groovy/
 
 banner="Design-Side Includes (DSI)"
 projectHome=$(cd $(dirname $0); pwd)
-
-addAppToPath() {
-   # Pass in the name of the app, such as: "ant", "mongodb", or "groovy"
-   # Example usage:
-   #     addAppToPath groovy
-   # Uses the ~/apps/ folder and assumes structure like: ~/apps/groovy/groovy-2.5.2/bin/groovy
-   appName=$1
-   addBin() {
-      PATH=$PATH:$(find ~/apps/$appName/*/bin -type d | tail -1)
-      which $appName || { echo "*** Folder 'bin' not found at: ~/apps/$appName"; exit; }
-      }
-   which $appName || addBin
-   }
 
 displayIntro() {
    cd $projectHome
@@ -33,14 +14,22 @@ displayIntro() {
    echo $banner
    echo $(echo $banner | sed s/./=/g)
    pwd
-   java -version
+   echo
+   }
+
+setupTools() {
+   cd $projectHome
+   echo "Tools..."
+   source add-app-to-path.sh java
+   source add-app-to-path.sh groovy
+   groovyJar=$GROOVY_HOME/lib/$(basename $GROOVY_HOME).jar
+   echo $groovyJar
    echo
    }
 
 compileDsi() {
    cd $projectHome/src
    echo "Compiling..."
-   addAppToPath groovy
    pwd
    rm -rf ../build
    groovyc -d ../build com/centerkey/dsi/*.groovy
@@ -56,6 +45,7 @@ bundleDsi() {
    jar cfv ../dist/dsi.jar *
    cp ../src/run.sh ../dist
    ls -o ../dist
+   test -w ~/apps && mkdir -p ~/apps/dsi && cp -v ../dist/* ~/apps/dsi
    echo
    }
 
@@ -69,6 +59,7 @@ showDsiVersion() {
    }
 
 displayIntro
+setupTools
 compileDsi
 bundleDsi
 showDsiVersion
