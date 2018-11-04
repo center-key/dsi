@@ -2,14 +2,18 @@
 
 _Command line tool to convert legacy SSI code into static HTML_
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/center-key/fetch-json/blob/master/LICENSE.txt)
+[![License:MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/center-key/fetch-json/blob/master/LICENSE.txt)
 
 ## Setup
-1. Install [Java](https://www.oracle.com/technetwork/java/javase/downloads) and
-1. install [Groovy](http://groovy-lang.org/download.html) (or just download the distribution into the `~/apps/groovy` folder)
-1. Run command `mkdir -p ~/apps/dsi`
-1. Download the two files from the [dist](dist) folder into the `~/apps/dsi` folder
-1. Run command `chmod +x ~/apps/dsi/run.sh`
+1. Install&ast; Java from:<br>http://jdk.java.net
+1. Install&ast; Groovy from:<br>http://groovy-lang.org/download.html
+1. Run the commands:<br>`$ mkdir -p ~/apps/dsi`<br>
+`$ cd ~/apps/dsi`<br>
+`$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/master/dist/dsi.jar`<br>
+`$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/master/dist/run.sh`<br>
+`$ chmod +x ~/apps/dsi/run.sh`
+
+&ast;or just download the distributions into the `~/apps/java` and `~/apps/groovy`, respectively.
 
 Verify your setup:
 ```shell
