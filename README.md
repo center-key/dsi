@@ -8,10 +8,10 @@ _Command line tool to convert legacy SSI code into static HTML_
 1. Install&ast; Java from:<br>http://jdk.java.net
 1. Install&ast; Groovy from:<br>http://groovy-lang.org/download.html
 1. Run the commands:<br>`$ mkdir -p ~/apps/dsi`<br>
-`$ cd ~/apps/dsi`<br>
-`$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/master/dist/dsi.jar`<br>
-`$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/master/dist/run.sh`<br>
-`$ chmod +x ~/apps/dsi/run.sh`
+   `$ cd ~/apps/dsi`<br>
+   `$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/master/dist/dsi.jar`<br>
+   `$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/master/dist/run.sh`<br>
+   `$ chmod +x ~/apps/dsi/run.sh`
 
 &ast;or just download the distributions into the `~/apps/java` and `~/apps/groovy`, respectively.
 
@@ -46,13 +46,13 @@ $ source ~/apps/dsi/run.sh public_html *.bjsp .jsp
 
 ## Page Tags
 Supported page tags:
-* `include`
-* `if`
-* `elif`
-* `else`
-* `endif`
-* `set`
-* `echo`
+   * `include`
+   * `if`
+   * `elif`
+   * `else`
+   * `endif`
+   * `set`
+   * `echo`
 
 See the Specification Cases in the **spec** folder for the syntax.
 
