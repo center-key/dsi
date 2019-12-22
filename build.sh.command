@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 # Design-Side Includes (DSI)
 #
 # To make this file runnable:
@@ -17,13 +17,32 @@ displayIntro() {
    echo
    }
 
+installMessage() {
+   command=$1
+   echo
+   echo "Install missing program:"
+   echo "   \$ $command"
+   echo
+   exit
+   }
+
+findGroovyJar() {
+   dsiFolder=$(cd $(dirname $0); pwd)
+   groovyHome=$(cd $(dirname $(which groovy))/$(dirname $(readlink $(which groovy)))/../libexec; pwd)
+   groovyVersion=$(groovy -version | awk '{ print $3 }')
+   groovyJar=$groovyHome/lib/groovy-$groovyVersion.jar
+   }
+
 setupTools() {
    cd $projectHome
    echo "Tools..."
-   source add-app-to-path.sh java
-   source add-app-to-path.sh groovy
-   groovyJar=$GROOVY_HOME/lib/$(basename $GROOVY_HOME).jar
-   echo $groovyJar
+   which java || installMessage "brew cask install java"
+   java -version
+   which groovy || installMessage "brew install groovy"
+   groovy -version
+   findGroovyJar
+   echo "Groovy JAR:"
+   ls $groovyJar
    echo
    }
 
@@ -54,7 +73,8 @@ showDsiVersion() {
    echo "Version..."
    pwd
    ls -1 dist/*
-   source dist/run.sh --version
+   chmod +x dist/run.sh
+   dist/run.sh --version
    echo
    }
 

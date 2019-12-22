@@ -5,25 +5,28 @@ _Command line tool to convert legacy SSI code into static HTML_
 [![License:MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/center-key/fetch-json/blob/master/LICENSE.txt)
 
 ## Setup
-1. Install&ast; Java from:<br>http://jdk.java.net
-1. Install&ast; Groovy from:<br>http://groovy-lang.org/download.html
-1. Run the commands:<br>`$ mkdir -p ~/apps/dsi`<br>
+1. Install Java and Groovy if not already installed:<br>
+   `$ brew cask install java`<br>
+   `$ brew install groovy`
+2. Verify installs:<br>
+   `$ java -version`<br>
+   `$ groovy -version`<br>
+   On macOS you may need to authorize in _System Preferences &rarr; Security & Privacy &rarr; Allow Anyway_
+3. Run the commands:<br>`$ mkdir -p ~/apps/dsi`<br>
    `$ cd ~/apps/dsi`<br>
    `$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/master/dist/dsi.jar`<br>
    `$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/master/dist/run.sh`<br>
    `$ chmod +x ~/apps/dsi/run.sh`
 
-&ast;or just download the distributions into the `~/apps/java` and `~/apps/groovy`, respectively.
-
 Verify your setup:
 ```shell
-$ source ~/apps/dsi/run.sh --version
+$ ~/apps/dsi/run.sh --version
 ```
 
 ## Usage
 Command format:
 ```shell
-$ source ~/apps/dsi/run.sh [SrcFolder] [FileName] [NewExt]
+$ ~/apps/dsi/run.sh [SrcFolder] [FileName] [NewExt]
 ```
 The parameters are optional.
 
@@ -36,12 +39,12 @@ The parameters are optional.
 ## Examples
 Default command:
 ```shell
-$ source ~/apps/dsi/run.sh  #convert .bhtml files to .html
+$ ~/apps/dsi/run.sh  #convert .bhtml files to .html
 $ mv *.html ../webroot      #move .html files to web root
 ```
 Command to generate `.jsp` files from `.bjsp` files in the `public_html` folder:
 ```shell
-$ source ~/apps/dsi/run.sh public_html *.bjsp .jsp
+$ ~/apps/dsi/run.sh public_html "*.bjsp" ".jsp"
 ```
 
 ## Page Tags
