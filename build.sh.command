@@ -14,6 +14,7 @@ displayIntro() {
    echo $banner
    echo $(echo $banner | sed s/./=/g)
    pwd
+   test -d .git && git restore dist/* && git pull --ff-only
    echo
    }
 
