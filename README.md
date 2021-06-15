@@ -2,7 +2,7 @@
 
 _Command line tool to convert legacy SSI code into static HTML_
 
-[![License:MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/center-key/fetch-json/blob/master/LICENSE.txt)
+[![License:MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/center-key/fetch-json/blob/main/LICENSE.txt)
 
 ## Setup
 1. Install Java and Groovy if not already installed:<br>
@@ -14,8 +14,8 @@ _Command line tool to convert legacy SSI code into static HTML_
    On macOS you may need to authorize in _System Preferences &rarr; Security & Privacy &rarr; Allow Anyway_
 3. Run the commands:<br>`$ mkdir -p ~/apps/dsi`<br>
    `$ cd ~/apps/dsi`<br>
-   `$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/master/dist/dsi.jar`<br>
-   `$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/master/dist/run.sh`<br>
+   `$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/main/dist/dsi.jar`<br>
+   `$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/main/dist/run.sh`<br>
    `$ chmod +x ~/apps/dsi/run.sh`
 
 Verify your setup:
