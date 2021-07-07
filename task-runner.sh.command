@@ -28,7 +28,6 @@ installMessage() {
    }
 
 findGroovyJar() {
-   dsiFolder=$(cd $(dirname $0); pwd)
    groovyHome=$(cd $(dirname $(which groovy))/$(dirname $(readlink $(which groovy)))/../libexec; pwd)
    groovyVersion=$(groovy -version | awk '{ print $3 }')
    groovyJar=$groovyHome/lib/groovy-$groovyVersion.jar
@@ -36,7 +35,7 @@ findGroovyJar() {
 
 setupTools() {
    cd $projectHome
-   echo "Tools..."
+   echo "[Tools]"
    which java || installMessage "brew cask install java"
    java -version
    which groovy || installMessage "brew install groovy"
@@ -49,7 +48,7 @@ setupTools() {
 
 compileDsi() {
    cd $projectHome/src
-   echo "Compiling..."
+   echo "[Compiling]"
    pwd
    rm -rf ../build
    groovyc -d ../build com/centerkey/dsi/*.groovy
@@ -59,7 +58,7 @@ compileDsi() {
 
 bundleDsi() {
    cd $projectHome/build
-   echo "Bundling..."
+   echo "[Bundling]"
    pwd
    rm ../dist/*
    jar cfv ../dist/dsi.jar *
@@ -71,11 +70,31 @@ bundleDsi() {
 
 showDsiVersion() {
    cd $projectHome
-   echo "Version..."
+   echo "[Versions]"
    pwd
    ls -1 dist/*
    chmod +x dist/run.sh
    dist/run.sh --version
+   echo
+   }
+
+specRunner() {
+   cd $projectHome/spec/input
+   echo "[Specifications]"
+   pwd
+   ls -o
+   $projectHome/dist/run.sh
+   rm ../output/*
+   mv *.html ../output
+   echo
+   }
+
+showResults() {
+   cd $projectHome/spec/output
+   echo "[Results]"
+   pwd
+   ls -o ../output
+   ls ../output/*.html | xargs open
    echo
    }
 
@@ -84,3 +103,5 @@ setupTools
 compileDsi
 bundleDsi
 showDsiVersion
+specRunner
+showResults
