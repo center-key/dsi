@@ -57,7 +57,7 @@ Supported page tags:
    * `set`
    * `echo`
 
-See the Specification Cases in the **spec** folder for the syntax.
+See the Specification Suite in the **spec** folder for the syntax.
 
 ---
 [MIT License](LICENSE.txt)
