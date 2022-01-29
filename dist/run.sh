@@ -20,13 +20,12 @@ installMessage() {
 
 findGroovyJar() {
    groovyHome=$(cd $(dirname $(which groovy))/$(dirname $(readlink $(which groovy)))/../libexec; pwd)
-   groovyVersion=$(groovy -version | awk '{ print $3 }')
+   groovyVersion=$(groovy --version | awk '{ print $3 }')
    groovyJar=$groovyHome/lib/groovy-$groovyVersion.jar
    }
 
-which java ||   installMessage "brew cask install java"
+which java ||   installMessage "brew install openjdk"
 which groovy || installMessage "brew install groovy"
 findGroovyJar
 dsiFolder=$(cd $(dirname $0); pwd)
-java -classpath $groovyJar:$dsiFolder/dsi.jar --illegal-access=deny com.centerkey.dsi.Run $@
-# --illegal-access=deny, see: https://issues.apache.org/jira/browse/GROOVY-8339
+java -classpath $groovyJar:$dsiFolder/dsi.jar com.centerkey.dsi.Run $@
