@@ -8,8 +8,8 @@ _Command line tool to convert legacy SSI code into static HTML_
 1. Install [Homebrew](https://brew.sh) and then install Java and Groovy:<br>
    `$ brew install openjdk groovy`<br>
 2. Verify installs:<br>
-   `$ java -version`<br>
-   `$ groovy -version`<br>
+   `$ java --version`<br>
+   `$ groovy --version`<br>
 3. Run the commands:<br>
    `$ mkdir -p ~/apps/dsi`<br>
    `$ cd ~/apps/dsi`<br>

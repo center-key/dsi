@@ -29,7 +29,7 @@ installMessage() {
 
 findGroovyJar() {
    groovyHome=$(cd $(dirname $(which groovy))/$(dirname $(readlink $(which groovy)))/../libexec; pwd)
-   groovyVersion=$(groovy -version | awk '{ print $3 }')
+   groovyVersion=$(groovy --version | awk '{ print $3 }')
    groovyJar=$groovyHome/lib/groovy-$groovyVersion.jar
    }
 
@@ -37,9 +37,9 @@ setupTools() {
    cd $projectHome
    echo "[Tools]"
    which java || installMessage "brew cask install java"
-   java -version
+   java --version
    which groovy || installMessage "brew install groovy"
-   groovy -version
+   groovy --version
    findGroovyJar
    echo "Groovy JAR:"
    ls $groovyJar
@@ -72,8 +72,8 @@ showDsiVersion() {
    cd $projectHome
    echo "[Versions]"
    pwd
-   ls -1 dist/*
    chmod +x dist/run.sh
+   ls -1o dist/*
    dist/run.sh --version
    echo
    }
