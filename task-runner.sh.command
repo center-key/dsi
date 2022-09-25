@@ -14,7 +14,9 @@ displayIntro() {
    echo $banner
    echo $(echo $banner | sed s/./=/g)
    pwd
-   test -d .git && git restore dist/* && git pull --ff-only
+   test -d .git || { echo "Project must be in a git repository."; exit; }
+   git restore dist/* &>/dev/null
+   git pull --ff-only
    echo
    }
 
