@@ -5,7 +5,7 @@
 //    Reads and parses the base (source) files used to create the final HTML  //
 //    output. The default file name extension for base files is ".bhtml".     //
 //                                                                            //
-// MIT License - Copyright (c) individual contributors to DSI                 //
+// MIT License - Copyright (c) Individual contributors to DSI                 //
 ////////////////////////////////////////////////////////////////////////////////
 
 package com.centerkey.dsi

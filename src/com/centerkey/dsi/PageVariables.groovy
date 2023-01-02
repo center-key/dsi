@@ -5,7 +5,7 @@
 //    Controls user defined and predefined variables utilized for inserting   //
 //    text values into web pages.                                             //
 //                                                                            //
-// MIT License - Copyright (c) individual contributors to DSI                 //
+// MIT License - Copyright (c) Individual contributors to DSI                 //
 ////////////////////////////////////////////////////////////////////////////////
 
 package com.centerkey.dsi

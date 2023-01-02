@@ -4,7 +4,7 @@
 // Input File Name Filter                                                     //
 //    Determines if a file has the right name to be a base (source) file.     //
 //                                                                            //
-// MIT License - Copyright (c) individual contributors to DSI                 //
+// MIT License - Copyright (c) Individual contributors to DSI                 //
 ////////////////////////////////////////////////////////////////////////////////
 
 package com.centerkey.dsi

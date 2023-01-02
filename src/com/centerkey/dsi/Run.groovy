@@ -4,7 +4,7 @@
 // Web Code Reuser Core                                                       //
 //    The core (main) launcher and controller for DSI.                        //
 //                                                                            //
-// MIT License - Copyright (c) individual contributors to DSI                 //
+// MIT License - Copyright (c) Individual contributors to DSI                 //
 ////////////////////////////////////////////////////////////////////////////////
 
 package com.centerkey.dsi

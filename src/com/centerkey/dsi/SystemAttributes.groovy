@@ -4,7 +4,7 @@
 // System Attributes                                                          //
 //    Defines constants and messages used by the application.                 //
 //                                                                            //
-// MIT License - Copyright (c) individual contributors to DSI                 //
+// MIT License - Copyright (c) Individual contributors to DSI                 //
 ////////////////////////////////////////////////////////////////////////////////
 
 package com.centerkey.dsi
