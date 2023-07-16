@@ -1,5 +1,5 @@
 <!--#set var="pageTitle" value="Home Page" -->
-<!--#include file="~page-begin.fhtml" -->
+<!--#include file="+page-begin.fhtml" -->
 
 <main>
    <p>
@@ -23,9 +23,9 @@
    </p>
    <p>
       Unicode:
-      <code>ButtonExit=退出</code> | <code>Russian (русский)</code>
+      <code>ButtonExit=退出</code> | <code>Ukrainian (українська)</code>
    </p>
 
 </main>
 
-<!--#include file="~page-end.fhtml" -->
+<!--#include file="+page-end.fhtml" -->

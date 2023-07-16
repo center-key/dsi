@@ -1,5 +1,5 @@
 <!--#set var="pageTitle" value="Errors" -->
-<!--#include file="~page-begin.fhtml" -->
+<!--#include file="+page-begin.fhtml" -->
 
 <main>
    <p>
@@ -16,4 +16,4 @@
    </p>
 </main>
 
-<!--#include file="~page-end.fhtml" -->
+<!--#include file="+page-end.fhtml" -->

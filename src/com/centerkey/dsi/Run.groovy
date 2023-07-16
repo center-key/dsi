@@ -20,7 +20,7 @@ final class Run {
       String srcDirName, srcFileName , destDirName, destFileExt
       println(SystemAttributes.headerMsg)
       srcDirName =  (argv.length > 0) ? argv[0] : SystemAttributes.appWorkingDir
-      srcFileName = (argv.length > 1) ? argv[1] : "*.bhtml" //"b" for base
+      srcFileName = (argv.length > 1) ? argv[1] : "*.bhtml"  //"b" for base
       destDirName = (argv.length > 2) ? argv[2] : srcDirName
       destFileExt = (argv.length > 3) ? argv[3] : ".html"
       if (srcDirName.equals("") || srcDirName.equals("."))
@@ -39,7 +39,7 @@ final class Run {
       }
 
    private static void doIt(File[] srcFileList, File destDir, String destFileExt) {
-      println("Files Found: " + srcFileList.length)
+      println("Files found: " + srcFileList.length)
       for (File srcFile : srcFileList) {
          String destFileName = srcFile.getName()
          destFileName = destFileName.substring(0, destFileName.lastIndexOf('.')) + destFileExt
