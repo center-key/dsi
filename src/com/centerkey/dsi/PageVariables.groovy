@@ -21,7 +21,7 @@ class PageVariables {
    String getValue(String varName) {
       String varValue = values.get(varName)
       if (varValue == null) {
-         varValue = ">>> ERROR #4 -- Variable '" + varName + "' not defined."
+         varValue = "*** ERROR #4 -- Variable '" + varName + "' not defined."
          println(varValue)
          }
       return varValue

@@ -1,5 +1,8 @@
 <footer>
-   <div><!--#echo var="LAST_MODIFIED" --></div>
+   <div>
+      <p><!--#echo var="LAST_MODIFIED" --></p>
+      <a href=https://github.com/center-key/dsi>GitHub</a>
+   </div>
 </footer>
 
 </body>

@@ -31,7 +31,7 @@ class InputFile {
          fileOut.close()
          }
       catch (IOException e) {
-         println(">>> ERROR #2 -- " + e.toString())
+         println("*** ERROR #2 -- " + e.toString())
          }
       }
 
@@ -50,7 +50,7 @@ class InputFile {
          fileIn.close()
          }
       catch (IOException e) {
-         String errMsg = ">>> ERROR #3 -- " + e.toString()
+         String errMsg = "*** ERROR #3 -- " + e.toString()
          println(errMsg)
          dataOut.println(errMsg)
          }
