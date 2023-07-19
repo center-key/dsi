@@ -7,7 +7,7 @@
 #
 # Usage:
 #     $ ~/apps/dsi/run.sh --version
-#     $ ~/apps/dsi/run.sh [SrcFolder] [FileName] [NewExt]
+#     $ ~/apps/dsi/run.sh [SrcFolder] [Filename] [NewExt] [DestFolder]
 
 installMessage() {
    command=$1
@@ -28,4 +28,4 @@ which java ||   installMessage "brew install openjdk"
 which groovy || installMessage "brew install groovy"
 findGroovyJar
 dsiFolder=$(cd $(dirname $0); pwd)
-java -classpath $groovyJar:$dsiFolder/dsi.jar com.centerkey.dsi.Run $@
+java -classpath $groovyJar:$dsiFolder/dsi.jar com.centerkey.dsi.Run "$@"
