@@ -4,6 +4,8 @@ _Command line tool to convert legacy SSI code into static HTML_
 
 [![License:MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/center-key/fetch-json/blob/main/LICENSE.txt)
 
+SSI is a legacy templating format -- only use if you must.
+
 ## Setup
 1. Install [Homebrew](https://brew.sh) and then install Java and Groovy:<br>
    `$ brew install openjdk groovy`<br>
@@ -25,25 +27,25 @@ $ ~/apps/dsi/run.sh --version
 ## Usage
 Command format:
 ```shell
-$ ~/apps/dsi/run.sh [SrcFolder] [FileName] [NewExt]
+$ ~/apps/dsi/run.sh [SrcFolder] [Filename] [NewExt]
 ```
 The parameters are optional.
 
-| Parameter   | Description | Default Value |
-| ----------- | ----------- | ------------- |
-| `SrcFolder` | The "source folder" specifies the location of the base HTML files and fragment HTML files.  Valid folder names are dependent on your operating system.  Enclose the folder name in quotes if it includes spaces. | The current folder |
-| `FileName`  | The "file name" specifies the name of the base HTML file (ex: `index.bhtml`).  Wildcards ("*") are supported | `*.bhtml` |
-| `NewExt`    | The "new extension" specifies the file extension of the new files. | `.html` |
+| Parameter    | Description                                                            | Default Value |
+| ------------ | ---------------------------------------------------------------------- | ------------- |
+| `SrcFolder`  | Specifies the location of the base HTML files and fragment HTML files. | `.`           |
+| `Filename`   | The "file name" specifies the name of the base HTML file (ex: `index.bhtml`).  Wildcards ("*") are supported if quoted. | `"*.bhtml"` |
+| `NewExt`     | The "new extension" specifies the file extension of the new files.     | `.html`       |
+| `DestFolder` | Specifies the output location to save the resulting HTML files.        | `.`           |
 
 ## Examples
 Default command:
 ```shell
 $ ~/apps/dsi/run.sh  #convert .bhtml files to .html
-$ mv *.html ../webroot      #move .html files to web root
 ```
-Command to generate `.jsp` files from `.bjsp` files in the `public_html` folder:
+Command to generate `.jsp` files from `src/*.bjsp` and save them to the `public_html` folder:
 ```shell
-$ ~/apps/dsi/run.sh public_html "*.bjsp" ".jsp"
+$ ~/apps/dsi/run.sh src "*.bjsp" .jsp public_html
 ```
 
 ## Page Tags

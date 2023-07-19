@@ -81,13 +81,17 @@ showDsiVersion() {
    }
 
 specRunner() {
+   # Usage:
+   #  $ ~/apps/dsi/run.sh [SrcFolder] [Filename] [NewExt] [DestFolder]
    cd $projectHome/spec/input
    echo "[Specifications]"
    pwd
    ls -o
+   rm -rf ../output
+   $projectHome/dist/run.sh "." "index.bhtml" ".html" "../output/args"
    $projectHome/dist/run.sh
-   rm ../output/*
    mv *.html ../output
+   diff ../output/index.html ../output/args/index.html
    echo
    }
 

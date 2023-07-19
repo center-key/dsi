@@ -97,7 +97,7 @@ class InputFile {
             attributes.setValue(cmdPieces[1], cmdPieces[3].replaceAll(escapedQuotePlaceholder, q))
             }
          else if (line.contains("<!--#include")) {
-            // <!--#include file="[FileName]" plain -->
+            // <!--#include file="[Filename]" plain -->
             int loc = line.indexOf("file=") + 6
             fileName = line.substring(loc, line.indexOf('"', loc))
             new InputFile().processFile(new File(srcFile.getParentFile(), fileName), dataOut)

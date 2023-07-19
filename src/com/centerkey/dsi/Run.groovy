@@ -11,42 +11,39 @@ package com.centerkey.dsi
 
 final class Run {
    // Usage:
-   //    > java Run <SrcFileName> <DestFileExt> <SrcDir>
+   //    > java Run [SrcFolder] [Filename] [NewExt] [DestFolder]
 
    private Run() {}
 
    static void main(String[] argv) {
-      File[] fileList
-      String srcDirName, srcFileName , destDirName, destFileExt
+      String srcFolderName, srcFilter, destFileExt, destFolderName
       println(SystemAttributes.headerMsg)
-      srcDirName =  (argv.length > 0) ? argv[0] : SystemAttributes.appWorkingDir
-      srcFileName = (argv.length > 1) ? argv[1] : "*.bhtml"  //"b" for base
-      destDirName = (argv.length > 2) ? argv[2] : srcDirName
-      destFileExt = (argv.length > 3) ? argv[3] : ".html"
-      if (srcDirName.equals("") || srcDirName.equals("."))
-         srcDirName = SystemAttributes.appWorkingDir
-      if (srcDirName.equals("--version") || srcDirName.equals("-v"))
+      srcFolderName =  (argv.length > 0) ? argv[0] : "."
+      srcFilter =      (argv.length > 1) ? argv[1] : "*.bhtml"  //"b" for base
+      destFileExt =    (argv.length > 2) ? argv[2] : ".html"
+      destFolderName = (argv.length > 3) ? argv[3] : "."
+      if (srcFolderName.equals("--version") || srcFolderName.equals("-v"))
          println(SystemAttributes.versionMsg)
-      else {
-         println("Searching '" + srcDirName + "' for '" + srcFileName + "'")
-         fileList = new File(srcDirName).listFiles(new Filter(srcFileName))
-         if (fileList == null)
-            println(">>> ERROR #1 -- Cannot Read Folder")
-         else
-            doIt(fileList, new File(destDirName), destFileExt)
-         }
+      else
+         processFiles(srcFolderName, srcFilter, destFileExt, destFolderName)
       println(SystemAttributes.footerMsg)
       }
 
-   private static void doIt(File[] srcFileList, File destDir, String destFileExt) {
-      println("Files found: " + srcFileList.length)
-      for (File srcFile : srcFileList) {
-         String destFileName = srcFile.getName()
-         destFileName = destFileName.substring(0, destFileName.lastIndexOf('.')) + destFileExt
-         println(srcFile.getName() + " --> " + destDir.getAbsolutePath() +
-            SystemAttributes.fileSeparator + destFileName)
-         new InputFile().processFile(srcFile, new File(destDir, destFileName))
+   private static void processFiles(String srcFolderName, String srcFilter, String destFileExt, String destFolderName) {
+      File srcFolder =  new File(srcFolderName)
+      File destFolder = new File(destFolderName)
+      File[] srcFiles = srcFolder.listFiles(new Filter(srcFilter))
+      println("Searching '" + srcFolder.getCanonicalPath() + "' for '" + srcFilter + "'")
+      if (srcFiles == null)
+         throw new Exception("Cannot read folder")
+      destFolder.mkdirs()
+      for (File srcFile : srcFiles) {
+         String destFilename = srcFile.getName().take(srcFile.getName().lastIndexOf('.')) + destFileExt
+         File destFile =       new File(destFolder, destFilename)
+         println("   " + srcFile.getName() + " --> " + destFile.getCanonicalPath())
+         new InputFile().processFile(srcFile, destFile)
          }
+      println("   Files: " + srcFiles.length)
       }
 
    }
