@@ -13,7 +13,7 @@ SSI is a legacy templating format -- only use if you must.
    `$ java --version`<br>
    `$ groovy --version`<br>
 3. Run the commands:<br>
-   `$ mkdir -p ~/apps/dsi`<br>
+   `$ mkdir -pv ~/apps/dsi`<br>
    `$ cd ~/apps/dsi`<br>
    `$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/main/dist/dsi.jar`<br>
    `$ curl --remote-name https://raw.githubusercontent.com/center-key/dsi/main/dist/run.sh`<br>

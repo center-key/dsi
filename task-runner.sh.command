@@ -66,7 +66,7 @@ bundleDsi() {
    jar cfv ../dist/dsi.jar *
    cp ../src/run.sh ../dist
    ls -o ../dist
-   test -w ~/apps && mkdir -p ~/apps/dsi && cp -v ../dist/* ~/apps/dsi
+   test -w ~/apps && mkdir -pv ~/apps/dsi && cp -v ../dist/* ~/apps/dsi
    echo
    }
 
