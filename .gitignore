@@ -1,7 +1,7 @@
 # Design-Side Includes (DSI)
 
-# Downloaded and generated files
+# Downloaded and Generated Files
 /build
 
-# Extraneous system files
+# Extraneous System Files
 .DS_Store
