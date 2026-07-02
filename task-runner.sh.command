@@ -14,8 +14,8 @@ displayIntro() {
    echo $banner
    echo $(echo $banner | sed s/./=/g)
    pwd
-   test -d .git || { echo "Project must be in a git repository."; exit; }
-   git restore dist/* &>/dev/null
+   [ -d .git ] || { echo "Project must be in a git repository."; exit; }
+   [ -d dist ] && git restore dist
    git pull --ff-only
    echo
    }
@@ -66,7 +66,7 @@ bundleDsi() {
    jar cfv ../dist/dsi.jar *
    cp ../src/run.sh ../dist
    ls -o ../dist
-   test -w ~/apps && mkdir -pv ~/apps/dsi && cp -v ../dist/* ~/apps/dsi
+   [ -w ~/apps ] && mkdir -pv ~/apps/dsi && cp -v ../dist/* ~/apps/dsi
    echo
    }
 
