@@ -5,7 +5,7 @@
 ###########################################
 
 # To run this installer:
-#     $ curl --silent https://raw.githubusercontent.com/center-key/dsi/main/install-dsi.sh | bash
+#     $ curl https://raw.githubusercontent.com/center-key/dsi/main/install-dsi.sh | bash
 
 installFolder=~/apps/dsi
 
